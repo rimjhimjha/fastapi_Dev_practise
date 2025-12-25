@@ -1,5 +1,6 @@
-from fastapi import FastAPI,HTTPException
+from fastapi import FastAPI,HTTPException,path
 from schema import  GeneralURLChoice, Band, BandCreate,BandwithID
+from typing import Annotated
 
 app = FastAPI()
 
@@ -52,7 +53,7 @@ def get_band(band_id: int):
     )
 '''
 
-@app.get("/bands/{band_id}",response_model=Band)
+'''@app.get("/bands/{band_id}",response_model=Band)
 def get_band(band_id: int):
     for band in BANDS:
         if band["id"] == band_id:
@@ -63,6 +64,7 @@ def get_band(band_id: int):
         detail="Band not found"
     
     )
+    '''
 
 ''' @app.get('/band/genre/{genre}')
 async def bands_for_genre( genre: GeneralURLChoice) -> list[dict]:
@@ -99,5 +101,18 @@ async def create_band(band_data: BandCreate)-> BandwithID:
     newband= BandwithID(id = id, **band_data.model_dump()).model_dump()
     BANDS.append(newband)
     return newband
+
+#annotated data
+@app.get("/bands/{band_id}",response_model=Band)
+def get_band(band_id: Annotated[int,Path ("The band ID")]):
+    for band in BANDS:
+        if band["id"] == band_id:
+            return band
+
+    raise HTTPException(
+        status_code=404,
+        detail="Band not found"
+    
+    )
         
     
