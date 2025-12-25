@@ -1,0 +1,8 @@
+POST http://localhost:8080/bands/
+Content-Type: application/json
+
+
+{
+    "name": "Board of Canada",
+    "genre": "Electronics"
+}

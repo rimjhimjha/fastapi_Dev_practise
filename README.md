@@ -16,3 +16,22 @@ uvicorn main:app --reload --port 8080 (cant use in production better for develop
 
 ## to check api run fine --> swagger UI
 http://localhost:8080/docs
+
+
+## github commands
+## first time
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPO_NAME.git
+git push -u origin main
+
+
+## eevrytime after
+
+git add .
+git commit -m "Update"
+git push
+

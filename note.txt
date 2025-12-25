@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+api routes
+http methods
+swagger
+enum
+data validation
+pydantic
+path parameters
+pydantic
+model classe
+nested model
