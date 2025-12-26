@@ -10,3 +10,10 @@ path parameters
 pydantic
 model classe
 nested model
+url query parameter for filtering
+request body/ response body
+Annotated type for data validation+ metadata
+typing module
+query parameter
+sqlmodel
+orm

@@ -6,3 +6,17 @@ Content-Type: application/json
     "name": "Board of Canada",
     "genre": "Electronics"
 }
+
+
+###
+
+GET http://localhost:8080/bands/?genre=electronics
+
+
+
+
+
+
+###
+ 
+GET http://localhost:8080/bands
